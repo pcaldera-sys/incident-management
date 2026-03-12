@@ -1,0 +1,28 @@
+_schema-version: '1.0'
+repository: docker.io/paolocalderasyscons
+tag: latest
+modules:
+  - name: incident-management-srv
+    build-parameters:
+      buildpack:
+        type: nodejs
+        builder: builder-jammy-base
+        path: gen/srv
+        env:
+          BP_NODE_RUN_SCRIPTS: ""
+  - name: incident-management-hana-deployer
+    build-parameters:
+      buildpack:
+        type: nodejs
+        builder: builder-jammy-base
+        path: gen/db
+        env:
+          BP_NODE_RUN_SCRIPTS: ""
+  - name: incident-management-html5-deployer
+    build-parameters:
+      buildpack:
+        type: nodejs
+        builder: builder-jammy-base
+        path: app/html5-deployer
+        env:
+          BP_NODE_RUN_SCRIPTS: ""

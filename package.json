@@ -17,13 +17,18 @@
   "scripts": {
     "test": "npx jest tests/test.js",
     "start": "cds-serve",
-    "watch-incidents": "cds watch --open ns.incidents/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-incidents": "cds watch --open ns.incidents/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "cds-build": "npm install --include=dev && cds build --production"
   },
   "private": true,
   "workspaces": [
     "app/*"
   ],
   "cds": {
+    "docker": {
+      "registry": "docker.io",
+      "repository": "paolocalderasyscons/incident-management-srv"
+    },
     "requires": {
       "[development]": {
         "auth": {
