@@ -3,7 +3,7 @@
 global:
   domain: b3e5cf0.kyma.ondemand.com
   imagePullSecret:
-    name: docker-hub-secret
+    name: regsecret
   image:
     registry: docker.io
     repository: paolocalderasyscons/incident-management
@@ -24,7 +24,7 @@ srv:
       memory: 500M
     requests:
       ephemeral-storage: 1G
-      cpu: 500m
+      cpu: 50m
       memory: 500M
   health:
     liveness:
@@ -51,7 +51,7 @@ hana-deployer:
       cpu: 2000m
       memory: 1G
     requests:
-      cpu: 1000m
+      cpu: 100m
       memory: 1G
 hana:
   serviceOfferingName: hana
@@ -82,7 +82,7 @@ html5-apps-deployer:
       cpu: 2000m
       memory: 1G
     requests:
-      cpu: 1000m
+      cpu: 100m
       memory: 1G
   envFrom:
     - configMapRef:
